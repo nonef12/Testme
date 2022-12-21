@@ -1,11 +1,10 @@
 from flask import Flask
+import requests
 server = Flask(__name__)
 
 @server.route("/")
 def hello():
-    i=0
-    while 1:
-       return i+=1
-
+    a=requests.get("https://www.google.com").text
+    print(a)
 if __name__ == "__main__":
    server.run(host='0.0.0.0', port=1337)
